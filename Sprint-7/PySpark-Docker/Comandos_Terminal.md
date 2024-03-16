@@ -5,7 +5,7 @@
 cd 'C:\Users\aline\OneDrive\Área de Trabalho\Compass-UOL-main\Sprint-7\spark-docker'   
 
 *substituição do wget pelo invoke-webequest para baixar o README*   
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/aline-exe/Compass-UOL/main/README.md?token=GHSAT0AAAAAACLSBM2YHW76RC7QUB72K5CMZNIGJJQ" -Headers @{"Authorization"="token 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"} -OutFile README.md  
+Invoke-WebRequest -Uri "" -Headers @{"Authorization"="token"} -OutFile README.md  
 
 #
 
