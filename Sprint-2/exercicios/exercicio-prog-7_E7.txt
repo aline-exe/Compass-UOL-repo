@@ -1,0 +1,16 @@
+select
+    autor.nome as nome
+from
+    autor
+
+left join
+    livro on autor.codautor = livro.autor
+
+group by
+    autor.codautor, autor.nascimento, autor.nome
+
+having
+    ifnull(count(livro.cod), 0) = 0
+
+order by
+   autor.nome asc

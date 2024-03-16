@@ -1,0 +1,30 @@
+with vendmenor as (
+    select
+        vendedor.cdvdd,
+        sum(vendas.qtd * vendas.vrunt) as valor_total_vendas
+    from
+        tbvendedor as vendedor
+    left join
+        tbvendas as vendas
+    on
+        vendedor.cdvdd = vendas.cdvdd
+    where
+        vendas.status = 'Concluído'
+    group by
+        vendedor.cdvdd
+    order by
+        sum(vendas.qtd * vendas.vrunt)
+    limit 1
+)
+
+select
+    depend.cddep,
+    depend.nmdep,
+    depend.dtnasc,
+    vendmenor.valor_total_vendas
+from
+    tbdependente as depend
+join
+    vendmenor
+on
+    depend.cdvdd = vendmenor.cdvdd;

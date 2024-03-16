@@ -1,0 +1,10 @@
+select
+    estado,
+    cast(round(avg(qtd * vrunt), 2) as float(10, 2)) as gastomedio
+
+from tbvendas
+
+where status = 'Concluído'
+
+group by estado
+order by gastomedio desc

@@ -1,0 +1,36 @@
+
+select
+    count(*) as quantidade,
+    editora.nome as nome,
+    endereco.estado as estado,
+    endereco.cidade as cidade
+from
+    livro
+
+join
+    editora on livro.editora = editora.codeditora
+join
+    endereco on editora.endereco = endereco.codendereco
+group by
+    editora.nome, endereco.estado, endereco.cidade
+
+order by
+    quantidade desc
+
+limit 5;
+
+
+
+-- quantidade, nome, estado e cidade
+
+-- estado e cidade: endereco
+-- quantidade:
+-- nome: editora
+-- quant de livros: livro
+
+-- endereco e editora tem SK de 'endereco'
+-- criar nova coluna de quantidade
+-- contar a quantidade de titulos pra cada cod de editora na tabela livros
+
+-- valores editora (nome): 13 e 1 (?)
+

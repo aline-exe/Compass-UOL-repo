@@ -1,0 +1,18 @@
+WITH ranking_nome AS (
+  SELECT
+    nome,
+    FLOOR(ano / 10) * 10 AS decada,
+    COUNT(*) AS frequencia,
+    ROW_NUMBER() OVER (PARTITION BY FLOOR(ano / 10) * 10 ORDER BY COUNT(*) DESC) AS ranking
+  FROM nomes
+  WHERE FLOOR(ano / 10) * 10 >= 1950
+  GROUP BY nome, FLOOR(ano / 10) * 10
+)
+
+SELECT
+  nome,
+  decada,
+  frequencia
+FROM ranking_nome
+WHERE ranking <= 3
+ORDER BY decada ASC

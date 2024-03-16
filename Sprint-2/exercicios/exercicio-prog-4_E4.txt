@@ -1,0 +1,23 @@
+
+select
+    autor.nome as nome,
+    autor.codautor as codautor,
+    autor.nascimento as nascimento,
+    ifnull(count(livro.cod), 0) as quantidade
+from
+    autor
+
+left join
+    livro on autor.codautor = livro.autor
+
+group by
+    autor.codautor, autor.nascimento, autor.nome
+
+order by
+   autor.nome asc
+
+
+
+
+-- codautor nascimento e quantidade
+

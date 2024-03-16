@@ -1,0 +1,16 @@
+select
+    vendas.cdcli as cdcli,
+    vendas.nmcli,
+    sum(vendas.qtd * vendas.vrunt) as gasto
+
+
+from tbvendas as vendas
+join tbvendedor as vendedor
+on vendas.cdvdd = vendedor.cdvdd
+
+where status = 'Concluído'
+
+group by vendas.cdcli, vendas.nmcli
+order by
+    gasto desc
+limit 1
