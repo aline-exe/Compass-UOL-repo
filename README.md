@@ -1,15 +1,6 @@
 <h1 align=center> Compass.UOL <img src="https://logospng.org/download/uol/logo-uol-icon-256.png" width="27"/> - Trilha de Aprendizagem AWS </h1>
 
 <h3 align="center">Oi, sou a Aline!</h3> 
-
-<img align=left width="90" height="90" src="https://github.com/aline-exe/Compass-UOL/assets/132860472/69ba7b14-6baa-4fa6-82e8-2f624f607ee7" alt="*"> 
-
-- Moro em **Recife**/PE
-- Estudo na **Uninassau**
-- Tenho **18 anos**
-- Atualmente estudo **Ciência da Computação**, 3º período (2024.1)
-
-
 ##
 
 # Sprints - índice
